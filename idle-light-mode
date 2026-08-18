@@ -1,0 +1,64 @@
+{
+  "parent": "app_vposm.json",
+  "name": "vposm",
+  "assets": "vposm",
+  "data": {
+    "custom_idle_pages": {
+      "1_default_idle_0": {
+        "layout": "id__page_default_idle_pay"
+      },
+      "2_custom_1": {
+        "layout": "view__custom_page_custom_1"
+      }
+    }
+  },
+  "views": {
+    "view__custom_page_custom_1": {
+      "id": "view__custom_page_custom_1",
+      "type": "relative_layout",
+      "width": "match_parent",
+      "height": "match_parent",
+      "views": [
+        {
+          "type": "image",
+          "id": "el_2",
+          "src": "https://raw.githubusercontent.com/AsafcNayax/public-assets-demo/main/idle_light-mode.png",
+          "scale_type": "center_crop",
+          "width": "match_parent",
+          "height": "match_parent",
+          "center_in_parent": true
+        }
+      ]
+    }
+  },
+  "screens": {
+    "idle": {
+      "root": {
+        "views": [
+          {
+            "type": "flow_layout",
+            "width": "match_parent",
+            "height": "match_parent",
+            "center_in_parent": true,
+            "provider": "data(scheme:custom_idle_pages)",
+            "infinite": true,
+            "auto_advance": true,
+            "transition_type": "none",
+            "fade_duration": 0,
+            "auto_advance_delay": 3000,
+            "indicator_bottom_margin": 90,
+            "indicator_active_color": "@yellow",
+            "user_pause_duration": 15000
+          },
+          {
+            "id": "id__status_bar",
+            "type": "include",
+            "width": "match_parent",
+            "align_parent_top": true,
+            "view": "view__title_w_lang"
+          }
+        ]
+      }
+    }
+  }
+}
