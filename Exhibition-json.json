@@ -16,6 +16,16 @@
         {
           "id": "id__image_1",
           "type": "image",
+          "src": "https://raw.githubusercontent.com/AsafcNayax/public-assets-demo/refs/heads/main/your-logo-here-placeholder-rotated.png",
+          "width": "200dp",
+          "height": "167dp",
+          "align_parent_start": true,
+          "align_parent_top": true,
+          "margin_top": 20,
+          "margin_right": 0,
+          "margin_left": 20
+        },
+        {
           "src": "https://raw.githubusercontent.com/AsafcNayax/public-assets-demo/refs/heads/main/your-logo-placeholder-ellipse.png",
           "width": "190dp",
           "height": "126dp",
@@ -84,9 +94,9 @@
         {
           "id": "id__image_3",
           "type": "image",
-          "src": "https://raw.githubusercontent.com/AsafcNayax/public-assets-demo/refs/heads/main/your-logo-placeholder-ellipse.png",
-          "width": "130dp",
-          "height": "86dp",
+          "src": "https://raw.githubusercontent.com/AsafcNayax/public-assets-demo/refs/heads/main/your-logo-here-placeholder-rotated.png",
+          "width": "140dp",
+          "height": "117dp",
           "align_parent_start": true,
           "margin": 14,
           "margin_top": 44,
