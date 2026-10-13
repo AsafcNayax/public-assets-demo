@@ -2,41 +2,23 @@
   "parent": "app_vposm.json",
   "name": "vposm",
   "assets": "vposm",
+  "data": {
+    "custom_idle_pages": {
+      "1_default_idle_0": {
+        "layout": "id__page_default_idle_pay"
+      },
+      "2_custom_1": {
+        "layout": "view__custom_page_custom_1"
+      },
+      "3_custom_2": {
+        "layout": "view__custom_page_custom_2"
+      },
+      "4_custom_3": {
+        "layout": "view__custom_page_custom_3"
+      }
+    }
+  },
   "views": {
-    "id__page_default_idle_pay": {
-      "id": "id__page_default_pay",
-      "views": [
-        {
-          "id": "id__payment_methods",
-          "type": "include",
-          "width": "match_parent",
-          "view": "view__payment_methods",
-          "center_in_parent": true
-        },
-        {
-          "id": "id__image_1",
-          "type": "image",
-          "src": "https://raw.githubusercontent.com/AsafcNayax/public-assets-demo/refs/heads/main/your-logo-here-placeholder-rotated.png",
-          "width": "200dp",
-          "height": "167dp",
-          "align_parent_start": true,
-          "align_parent_top": true,
-          "margin_top": 20,
-          "margin_right": 0,
-          "margin_left": 20
-        },
-        {
-          "src": "https://raw.githubusercontent.com/AsafcNayax/public-assets-demo/refs/heads/main/your-logo-placeholder-ellipse.png",
-          "width": "190dp",
-          "height": "126dp",
-          "align_parent_start": true,
-          "align_parent_top": true,
-          "margin_top": 20,
-          "margin_right": 0,
-          "margin_left": 20
-        }
-      ]
-    },
     "view__custom_page_custom_1": {
       "id": "view__custom_page_custom_1",
       "type": "relative_layout",
@@ -45,8 +27,26 @@
       "views": [
         {
           "type": "lottie",
-          "id": "el_2",
-          "url": "https://raw.githubusercontent.com/AsafcNayax/public-assets-demo/refs/heads/main/VPOSM_Splash_Logo.json",
+          "id": "el_4",
+          "url": "https://raw.githubusercontent.com/AsafcNayax/public-assets-demo/refs/heads/main/VPOSM_Splash_Logo_10s.json",
+          "repeats": 9999999999,
+          "width": "match_parent",
+          "height": "match_parent",
+          "loop": true,
+          "center_in_parent": true
+        }
+      ]
+    },
+    "view__custom_page_custom_2": {
+      "id": "view__custom_page_custom_2",
+      "type": "relative_layout",
+      "width": "match_parent",
+      "height": "match_parent",
+      "views": [
+        {
+          "type": "lottie",
+          "id": "el_5",
+          "url": "https://raw.githubusercontent.com/AsafcNayax/public-assets-demo/refs/heads/main/coke_idle_480_10s.json",
           "repeats": 9999999999,
           "width": "match_parent",
           "height": "match_parent",
@@ -63,8 +63,8 @@
       "views": [
         {
           "type": "lottie",
-          "id": "el_4",
-          "url": "https://raw.githubusercontent.com/AsafcNayax/public-assets-demo/refs/heads/main/Crackers%203.json",
+          "id": "el_6",
+          "url": "https://raw.githubusercontent.com/AsafcNayax/public-assets-demo/refs/heads/main/Crackers_10s.json",
           "repeats": 9999999999,
           "width": "match_parent",
           "height": "match_parent",
@@ -92,32 +92,39 @@
           "margin_end": 50
         },
         {
-          "id": "id__image_3",
+          "id": "id__image_1",
           "type": "image",
-          "src": "https://raw.githubusercontent.com/AsafcNayax/public-assets-demo/refs/heads/main/your-logo-here-placeholder-rotated.png",
-          "width": "140dp",
-          "height": "117dp",
-          "align_parent_start": true,
-          "margin": 14,
-          "margin_top": 44,
-          "margin_right": 14,
-          "margin_bottom": 14,
-          "margin_left": 14
+          "src": "@assets/contactless.png",
+          "width": "match_parent",
+          "height": "match_parent",
+          "center_in_parent": true
         }
       ]
-    }
-  },
-  "data": {
-    "custom_idle_pages": {
-      "1_default_idle_0": {
-        "layout": "id__page_default_idle_pay"
-      },
-      "2_custom_1": {
-        "layout": "view__custom_page_custom_1"
-      },
-      "3_custom_3": {
-        "layout": "view__custom_page_custom_3"
-      }
+    },
+    "id__page_default_idle_pay": {
+      "id": "id__page_default_pay",
+      "views": [
+        {
+          "id": "id__payment_methods",
+          "type": "include",
+          "width": "match_parent",
+          "view": "view__payment_methods",
+          "center_in_parent": true
+        },
+        {
+          "id": "id__image_2",
+          "type": "image",
+          "src": "https://raw.githubusercontent.com/AsafcNayax/public-assets-demo/refs/heads/main/your-logo-here-placeholder-rotated.png",
+          "width": "220dp",
+          "height": "184dp",
+          "align_parent_start": true,
+          "margin": 23,
+          "margin_top": 23,
+          "margin_right": 23,
+          "margin_bottom": 23,
+          "margin_left": 23
+        }
+      ]
     }
   },
   "screens": {
@@ -141,7 +148,7 @@
             "auto_advance": true,
             "transition_type": "none",
             "fade_duration": 0,
-            "auto_advance_delay": 9000,
+            "auto_advance_delay": 10000,
             "indicator_bottom_margin": 90,
             "indicator_active_color": "@white",
             "indicator_fade_in": 300,
