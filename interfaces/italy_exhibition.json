@@ -186,6 +186,67 @@
         }
       ]
     },
+    "id__page_always_idle_pay": {
+      "views": [
+        {
+          "id": "id__title",
+          "type": "text",
+          "text": "Paga con contactless",
+          "gravity": "center",
+          "center_horizontal": true,
+          "align_parent_top": true,
+          "margin_top": 7,
+          "size": "30sp",
+          "color": "#ffffff",
+          "width": "match_parent",
+          "margin_start": 80,
+          "margin_end": 80
+        },
+        {
+          "id": "id__payment_methods",
+          "type": "include",
+          "width": "match_parent",
+          "view": "view__payment_methods",
+          "center_in_parent": true
+        },
+        {
+          "type": "image",
+          "width": "match_parent",
+          "src": "@assets/horizontal_separator.png",
+          "above": "id__transaction_info_container"
+        },
+        {
+          "id": "id__transaction_info_container",
+          "type": "relative_layout",
+          "width": "match_parent",
+          "height": "@dimens/always_idle_info_height",
+          "center_horizontal": true,
+          "align_parent_bottom": true,
+          "background": "#0A0A0A",
+          "views": [
+            {
+              "id": "id__price",
+              "type": "text",
+              "text": "@txt_price",
+              "center_vertical": true,
+              "align_parent_end": true,
+              "margin_end": 35,
+              "style": "styles:style__large_text",
+              "size": "@dimens/price_text_size"
+            },
+            {
+              "type": "image",
+              "src": "@assets/x_red.png",
+              "center_vertical": true,
+              "align_parent_start": true,
+              "margin_start": 30,
+              "width": "@dimens/icon_size",
+              "click": "run(module:vposm, command:pressed_cancel)"
+            }
+          ]
+        }
+      ]
+    },
     "id__page_pulse_pay": {
       "views": [
         {
