@@ -1,0 +1,301 @@
+{
+  "parent": "app_vposm.json",
+  "name": "vposm",
+  "assets": "vposm",
+  "screens": {
+    "idle": {
+      "root": {
+        "views": [
+          {
+            "id": "id__payment_types",
+            "type": "include",
+            "width": "match_parent",
+            "align_parent_bottom": true,
+            "view": "view__payment_types"
+          },
+          {
+            "type": "flow_layout",
+            "width": "match_parent",
+            "height": "match_parent",
+            "center_in_parent": true,
+            "provider": "data(scheme:custom_idle_pages)",
+            "infinite": true,
+            "auto_advance": true,
+            "transition_type": "none",
+            "fade_duration": 0,
+            "auto_advance_delay": 10000,
+            "indicator_bottom_margin": 90,
+            "indicator_active_color": "@white",
+            "indicator_fade_in": 300,
+            "indicator_fade_out": 400,
+            "user_pause_duration": 15000
+          },
+          {
+            "id": "id__status_bar",
+            "type": "include",
+            "width": "match_parent",
+            "align_parent_top": true,
+            "view": "view__title_w_lang"
+          }
+        ]
+      }
+    },
+    "vmc_processing": {
+      "root": {
+        "views": [
+          {
+            "type": "lottie",
+            "url": "blob:http://localhost:3015/e1641201-260e-46db-bb08-a9dfb677db88",
+            "center_in_parent": true,
+            "name": "processing_new",
+            "repeats": 9999999999,
+            "width": "480dp",
+            "height": "480dp"
+          }
+        ]
+      }
+    }
+  },
+  "views": {
+    "view__page_pulse_with_cancel": {
+      "views": [
+        {
+          "id": "id__title",
+          "type": "text",
+          "text": "Paga con contactless",
+          "auto_max_lines": true,
+          "style": "styles:style__title_text",
+          "margin_start": 50,
+          "margin_end": 50
+        },
+        {
+          "id": "id__pulse_button_gallery",
+          "type": "pulse_gallery",
+          "width": "wrap_content",
+          "center_in_parent": true,
+          "orientation": "horizontal",
+          "gravity": "center",
+          "auto_col": true,
+          "num_col": 3,
+          "provider": "vposm(scheme:buttons, selected:$(button_selected))",
+          "layout": "view__pulse_button_frame",
+          "highlight": true,
+          "select_action": "run(module:vposm, command:pressed_button, button:$(button_selected))"
+        },
+        {
+          "type": "image",
+          "align_parent_start": true,
+          "align_parent_bottom": true,
+          "margin": 26,
+          "src": "@assets/x_red.png",
+          "width": "@dimens/icon_size",
+          "click": "run(module:vposm, command:pressed_cancel)"
+        }
+      ]
+    },
+    "id__page_default_idle": {
+      "views": [
+        {
+          "id": "id__payment_types",
+          "type": "include",
+          "width": "match_parent",
+          "center_in_parent": true,
+          "view": "view__payment_types"
+        },
+        {
+          "id": "id__title",
+          "type": "text",
+          "text": "Paga con contactless",
+          "auto_max_lines": true,
+          "style": "styles:style__title_text",
+          "margin_start": 50,
+          "margin_end": 50
+        },
+        {
+          "id": "id__transaction_info_container",
+          "type": "relative_layout",
+          "width": "match_parent",
+          "height": "@dimens/always_idle_info_height",
+          "center_horizontal": true,
+          "align_parent_bottom": true,
+          "background": "#0A0A0A",
+          "views": []
+        }
+      ]
+    },
+    "id__page_idle_start_with_button": {
+      "views": [
+        {
+          "type": "lottie",
+          "url": "@assets/push_to_start.json",
+          "center_in_parent": true,
+          "padding_bottom": 45,
+          "click": "run(module:vposm, command:pressed_start)"
+        },
+        {
+          "id": "id__title",
+          "type": "text",
+          "text": "Paga con contactless",
+          "auto_max_lines": true,
+          "style": "styles:style__title_text",
+          "margin_start": 50,
+          "margin_end": 50
+        }
+      ]
+    },
+    "id__page_prod_select": {
+      "views": [
+        {
+          "type": "image",
+          "center_in_parent": true,
+          "src": "@assets/select_product_idle.png",
+          "name": "select_product_full"
+        },
+        {
+          "id": "id__title",
+          "type": "text",
+          "text": "Paga con contactless",
+          "auto_max_lines": true,
+          "margin_start": 50,
+          "margin_end": 50,
+          "gravity": "center",
+          "center_horizontal": true,
+          "align_parent_top": true,
+          "margin_top": 7,
+          "size": "30sp",
+          "color": "#ffffff",
+          "width": "match_parent"
+        }
+      ]
+    },
+    "id__page_default_idle_pay": {
+      "views": [
+        {
+          "id": "id__payment_methods",
+          "type": "include",
+          "width": "match_parent",
+          "view": "view__payment_methods",
+          "center_in_parent": true
+        },
+        {
+          "id": "id__title",
+          "type": "text",
+          "text": "Paga con contactless",
+          "auto_max_lines": true,
+          "style": "styles:style__title_text",
+          "margin_start": 50,
+          "margin_end": 50
+        }
+      ]
+    },
+    "id__page_pulse_pay": {
+      "views": [
+        {
+          "id": "id__title",
+          "type": "text",
+          "text": "Paga con contactless",
+          "auto_max_lines": true,
+          "style": "styles:style__title_text",
+          "margin_start": 50,
+          "margin_end": 50
+        },
+        {
+          "id": "id__pulse_button_gallery",
+          "type": "recycler",
+          "width": "wrap_content",
+          "center_in_parent": true,
+          "orientation": "horizontal",
+          "gravity": "center",
+          "auto_col": true,
+          "num_col": 3,
+          "provider": "vposm(scheme:buttons, selected:$(button_selected))",
+          "layout": "view__pulse_button_single",
+          "highlight": true,
+          "select_action": "run(module:vposm, command:pressed_button, button:$(button_selected))"
+        }
+      ]
+    },
+    "view__page_pulse": {
+      "views": [
+        {
+          "id": "id__title",
+          "type": "text",
+          "text": "Paga con contactless",
+          "auto_max_lines": true,
+          "style": "styles:style__title_text",
+          "margin_start": 50,
+          "margin_end": 50
+        },
+        {
+          "id": "id__pulse_button_gallery",
+          "type": "pulse_gallery",
+          "width": "wrap_content",
+          "center_in_parent": true,
+          "orientation": "horizontal",
+          "gravity": "center",
+          "auto_col": true,
+          "num_col": 3,
+          "provider": "vposm(scheme:buttons, selected:$(button_selected))",
+          "layout": "view__pulse_button_frame",
+          "highlight": true,
+          "select_action": "run(module:vposm, command:pressed_button, button:$(button_selected))"
+        }
+      ]
+    },
+    "view__page_multi_pulse": {
+      "views": [
+        {
+          "id": "id__title",
+          "type": "text",
+          "text": "Paga con contactless",
+          "auto_max_lines": true,
+          "style": "styles:style__title_text",
+          "margin_start": 50,
+          "margin_end": 50
+        },
+        {
+          "id": "id__pulse_button_gallery",
+          "type": "pulse_gallery",
+          "width": "wrap_content",
+          "center_in_parent": true,
+          "orientation": "horizontal",
+          "gravity": "center",
+          "auto_col": true,
+          "num_col": 3,
+          "provider": "vposm(scheme:buttons, selected:$(button_selected))",
+          "layout": "view__multi_pulse_button_frame",
+          "highlight": true,
+          "select_action": "run(module:vposm, command:pressed_button, button:$(button_selected))"
+        }
+      ]
+    },
+    "view__custom_page_custom_1": {
+      "id": "view__custom_page_custom_1",
+      "type": "relative_layout",
+      "width": "match_parent",
+      "height": "match_parent",
+      "views": [
+        {
+          "type": "lottie",
+          "id": "el_2",
+          "url": "blob:http://localhost:3015/cd9b2b54-6c29-4b4e-a9a0-0c09b874c275",
+          "repeats": 9999999999,
+          "width": "480dp",
+          "height": "480dp",
+          "loop": true,
+          "center_in_parent": true
+        }
+      ]
+    }
+  },
+  "data": {
+    "custom_idle_pages": [
+      {
+        "layout": "id__page_prod_select"
+      },
+      {
+        "layout": "view__custom_page_custom_1"
+      }
+    ]
+  }
+}
