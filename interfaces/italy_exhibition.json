@@ -62,7 +62,7 @@
         {
           "id": "id__title",
           "type": "text",
-          "text": "Paga con contactless",
+          "text": "seleziona un prodotto",
           "auto_max_lines": true,
           "style": "styles:style__title_text",
           "margin_start": 50,
